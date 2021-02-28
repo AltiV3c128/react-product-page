@@ -21,7 +21,7 @@ const App: React.FC = () => {
   });
 
   return (
-    <div className="Product page">
+    <div className="product-page">
       <header className="header">
         <div>menu</div>
       </header>

@@ -15,3 +15,15 @@
       transform: rotate(360deg);
     }
 }
+
+.product-list-view {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-view  {
+    width: 100%;
+}
+.product-view img.product {
+    width: 100%;
+}

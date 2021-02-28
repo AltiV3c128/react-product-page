@@ -1,4 +1,5 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
+
 export class BasePayload implements AxiosResponse {
     data: any;
     status: number;

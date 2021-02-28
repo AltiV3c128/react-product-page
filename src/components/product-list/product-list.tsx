@@ -2,6 +2,7 @@ import React from "react";
 import './product-list.css';
 import logo from '../../assets/logo.svg';
 import { ProductItemList } from "../../model/products/product-item-list";
+import ProductView from "../product-item/product-item";
 
 interface ProductListProps {
   list?: ProductItemList,
@@ -9,10 +10,12 @@ interface ProductListProps {
 }
 
 const ProductListView: React.FC<ProductListProps> = ({isLoading, list}) => {
+  const items = list?.items;
   return (
-    <div className="ProductListView">
+    <div className="product-list-view">
       { isLoading && ( <img src={logo} className="loading-logo" alt="logo" />) }
-      { !isLoading && !!list?.items?.length && ( <div>{JSON.stringify(list?.items)}</div>) }
+      
+      {items && items.map((item) => <ProductView item={item} />)}
     </div>
   );
 }
