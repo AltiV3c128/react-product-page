@@ -1,0 +1,9 @@
+.related {
+    display: flex;
+    height: 50px;
+    overflow-x: auto;
+}
+
+.related img {
+    margin-right: 10px;
+}

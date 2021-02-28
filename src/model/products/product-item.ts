@@ -1,7 +1,5 @@
 import { Availability } from "../availability/availability";
 import { Price } from "../price/price";
-import { ProductItemList } from "./product-item-list";
-
 export class ProductItem {
     public UPC : number;
     public name : string;
