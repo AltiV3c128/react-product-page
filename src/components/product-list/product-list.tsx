@@ -1,19 +1,21 @@
 import React from "react";
-import { ProductListItem } from "../../model/products/product-list-item";
 import './product-list.css';
 import logo from '../../assets/logo.svg';
+import { ProductItemList } from "../../model/products/product-item-list";
+import ProductView from "../product-item/product-item";
 
 interface ProductListProps {
-  items?: ProductListItem,
+  list?: ProductItemList,
   isLoading?: boolean;
 }
 
-const ProductListView: React.FC<ProductListProps> = ({isLoading, items}) => {
+const ProductListView: React.FC<ProductListProps> = ({isLoading, list}) => {
+  const items = list?.items;
   return (
-    <div className="ProductListView">
-      { isLoading && (
-        <img src={logo} className="loading-logo" alt="logo" />)
-      }
+    <div className="product-list-view">
+      { isLoading && ( <img src={logo} className="loading-logo" alt="logo" />) }
+      
+      {items && items.map((item) => <ProductView item={item} />)}
     </div>
   );
 }
