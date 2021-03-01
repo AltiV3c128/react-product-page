@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import './product-list.css';
 import logo from '../../assets/logo.svg';
 import ProductView from "../product-item/product-item";
 import { ProductItem } from "../../model/products/product-item";
 import { ProductItemList } from "../../model/products/product-item-list";
+import './style.css';
 interface ProductListProps {
   list: ProductItemList,
   isLoading?: boolean;

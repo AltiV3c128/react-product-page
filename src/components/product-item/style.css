@@ -1,0 +1,22 @@
+.related {
+    display: flex;
+    position: relative;
+    height: 50px;
+    overflow-x: auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.related img {
+    margin-right: 10px;
+}
+
+.related::-webkit-scrollbar {
+    width: 16px;
+    height: 20px;
+
+    background: transparent;
+    color: transparent;
+    border: transparent;
+}

@@ -3,7 +3,7 @@ import ProductListView from "../../components/product-list/product-list";
 import { ProductItemList } from "../../model/products/product-item-list";
 import { Constants } from "../../modules/constants/constants";
 import { ProductManager } from "../../modules/product-manager/product-manager";
-import './product-page.css';
+import './style.css';
 
 const ProductPage: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +35,7 @@ const ProductPage: React.FC = () => {
                     <img src={Constants.url.logoImage} alt='Logo' />
                 </div>
                 <div className='menu-bar'>
-                    <ul style={{display: "flex", listStyle: 'none', justifyContent: "space-between"}}>
+                    <ul>
                         <li>sunglasses</li>
                         <li>eyeglasses</li>
                         <li>lenses</li>

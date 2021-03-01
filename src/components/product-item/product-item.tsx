@@ -2,7 +2,7 @@ import React from "react";
 import { Price } from "../../model/price/price";
 import { ProductItem } from "../../model/products/product-item";
 import { Constants } from "../../modules/constants/constants";
-import './product-item.css';
+import './style.css';
 
 interface ProductProps {
   key : number,

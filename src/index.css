@@ -15,3 +15,25 @@ code {
 .product-page {
   min-width: 320px
 }
+
+.menu-bar,
+.search-bar {
+  display: none;
+}
+
+.menu-bar ul {
+  display: flex;
+  list-style: none; 
+  justify-content: "space-between";
+}
+
+.tablet-port .menu-bar,
+.tablet-port .search-bar,
+.tablet-land .menu-bar,
+.tablet-land .search-bar,
+.desktop-sd .menu-bar,
+.desktop-sd .search-bar,
+.desktop-hd .menu-bar,
+.desktop-hd .search-bar {
+    display: flex;
+}
