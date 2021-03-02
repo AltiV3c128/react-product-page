@@ -1,0 +1,33 @@
+.menu-bar {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.menu-bar ul {
+    display: flex;
+    flex-grow: 1;
+    margin: 0;
+    justify-content: center;
+    list-style: none; 
+}
+
+.menu-bar ul li {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    border: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-bottom: solid transparent;
+}
+
+.menu-bar ul li.active {
+    border-color: black;
+}
+
+.menu-bar ul li:hover {
+    border-color: #BABABA;
+}

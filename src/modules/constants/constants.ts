@@ -11,4 +11,12 @@ export class Constants {
         { iso : 'EUR', symbol : '€' },
         { iso : 'JPY', symbol : '¥'},
     ];
+
+    public static labels = {
+        sunglasses : 'Sunglasses',
+        eyeglasses : 'Eyeglasses',
+        lenses : 'Lenses',
+
+        resetButton : 'RESET',
+    }
 }

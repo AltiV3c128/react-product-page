@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Menu from "../../components/menu/menu";
 import ProductListView from "../../components/product-list/product-list";
+import SearchBar from "../../components/search-bar/search-bar";
 import { ProductItemList } from "../../model/products/product-item-list";
 import { Constants } from "../../modules/constants/constants";
 import { ProductManager } from "../../modules/product-manager/product-manager";
@@ -31,25 +33,20 @@ const ProductPage: React.FC = () => {
 
     return (
         <div className="product-page">
-            <header className="header" style={{display: "flex"}}>
+            <header className="header">
                 <div className='logo-bar'>
                     <img src={Constants.url.logoImage} alt='Logo' />
                 </div>
-                <div className='menu-bar'>
-                    <ul>
-                        <li>sunglasses</li>
-                        <li>eyeglasses</li>
-                        <li>lenses</li>
-                    </ul>
-                </div>
-                <div className='search-bar'>
-                    <input type='text' className='search-field' value={searchText} onChange={(event) => updateSearchText(event)} />
-                    <button className='reset-search-field' onClick={(event) => setSearchText('')}>RESET</button>
-                </div>
+                <Menu />
+                <SearchBar 
+                    searchText={searchText} 
+                    onChange={(event:React.ChangeEvent<HTMLInputElement>) => updateSearchText(event)}
+                    setSearchText={() => setSearchText('')} 
+                />
             </header>
             <ProductListView isLoading={isLoading} list={productList} filterSearchText={searchText} />
             <footer className="footer">
-            <div>footer</div>
+                <div>footer</div>
             </footer>
         </div>
     );
