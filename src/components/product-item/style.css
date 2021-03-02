@@ -1,14 +1,23 @@
+.product-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .product-view .related {
     display: flex;
-    height: 50px;
+    justify-content: space-between;
     overflow-x: auto;
+    width: 200px;
+}
 
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+.product-view .related .variant-container {
+    display: flex;
+    height: 50px;
 }
 
 .product-view .related img {
-    margin-right: 10px;
+    margin: 0 5px;
 }
 
 .product-view .info {
@@ -19,10 +28,6 @@
 }
 
 .product-view .related::-webkit-scrollbar {
-    width: 16px;
-    height: 20px;
-
-    background: transparent;
-    color: transparent;
-    border: transparent;
+    width: 0;
+    height: 0;
 }

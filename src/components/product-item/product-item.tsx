@@ -23,11 +23,13 @@ const ProductView: React.FC<ProductProps> = ({key, item}) => {
         <div>{item.name.toLowerCase()}</div>
       </div>
       <div className='related'>
-        {item.variants && !!item.variants.length && item.variants.map((variant: ProductItem) => (
-          <div className='variant'>
-            <img src={Constants.url.productImageVariant} />
-          </div>
-        ))}
+        <div className='variant-container'>
+          {item.variants && !!item.variants.length && item.variants.map((variant: ProductItem) => (
+            <div className='variant'>
+              <img src={Constants.url.productImageVariant} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
