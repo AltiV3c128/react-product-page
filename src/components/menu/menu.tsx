@@ -5,13 +5,23 @@ import { Constants } from "../../modules/constants/constants";
 import { ProductManager } from "../../modules/product-manager/product-manager";
 import './style.css';
 
-const Menu: React.FC = () => {
+interface MenuProps {
+    activeItem?: number
+}
+
+const Menu: React.FC <MenuProps>= ({activeItem}) => {
     return (
         <div className='menu-bar'>
             <ul>
-                <li className='active'>{Constants.labels.sunglasses}</li>
-                <li>{Constants.labels.eyeglasses}</li>
-                <li>{Constants.labels.lenses}</li>
+                <li className={`${activeItem === 0 && 'active'}`}>
+                    {Constants.labels.sunglasses}
+                </li>
+                <li className={`${activeItem === 1 && 'active'}`}>
+                    {Constants.labels.eyeglasses}
+                </li>
+                <li className={`${activeItem === 2 && 'active'}`}>
+                    {Constants.labels.lenses}
+                </li>
             </ul>
         </div>
     );
