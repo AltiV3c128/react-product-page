@@ -15,11 +15,12 @@ const ProductPage: React.FC = () => {
       if(!isLoading && !productLoaded) {
         setIsLoading(true);
         ProductManager.getProductList().then((result) => {
-          setIsLoading(false);
           setProductLoaded(true);
+          window.setTimeout(() => setIsLoading(false),1000);
+
           if(result.items != null && JSON.stringify(result.items) !== JSON.stringify(productList)) {
             setProductList(result);
-          }
+          }  
         });
       }
     });

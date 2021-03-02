@@ -38,13 +38,21 @@ class ProductListView extends React.Component<ProductListProps, ProductListState
 
   render() {
     return (
-      <div className="product-list-view">
-        { this.props.isLoading && ( <img src={logo} className="loading-logo" alt="logo" />) }
-        
-        {this.state.itemsToShow && this.state.itemsToShow.items?.map((item: ProductItem, index: number) => (
-          <ProductView key={index} item={item} />
-        ))}
-      </div>
+      <>
+        { (this.props.isLoading) && ( 
+          <div className='loading'>
+            <img src={logo} className="loading-logo" alt="logo" />
+          </div>
+        )}
+
+        {!this.props.isLoading && this.state.itemsToShow && (
+          <div className={`product-list-view ${!!this.state.itemsToShow.items?.length ? 'visible' : ''}`}>
+            {this.state.itemsToShow.items?.map((item: ProductItem, index: number) => (
+              <ProductView key={index} item={item} />
+            ))}
+          </div>
+        )}
+      </>
     );
   }
 }
