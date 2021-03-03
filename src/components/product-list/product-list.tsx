@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import logo from '../../assets/logo.svg';
 import ProductView from "../product-item/product-item";
 import { ProductItem } from "../../model/products/product-item";
@@ -23,7 +23,7 @@ class ProductListView extends React.Component<ProductListProps, ProductListState
   }
 
   componentDidUpdate(oldProps: ProductListProps) {
-    if (oldProps.filterSearchText != this.props.filterSearchText && this.props.list.items) {
+    if (oldProps.filterSearchText !== this.props.filterSearchText && this.props.list.items) {
       const textSearch = this.props.filterSearchText || '';
       const filtered = this.props.list.items.filter((item: { name: string; }) => { 
         return item.name.toLowerCase().search(textSearch.toLowerCase()) >= 0;
@@ -31,7 +31,7 @@ class ProductListView extends React.Component<ProductListProps, ProductListState
       this.setState({itemsToShow : new ProductItemList(filtered)});
     } 
 
-    if(oldProps.list != this.props.list) {
+    if(oldProps.list !== this.props.list) {
       this.setState({itemsToShow : this.props.list});
     }
   }

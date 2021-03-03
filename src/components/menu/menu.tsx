@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ProductListView from "../../components/product-list/product-list";
-import { ProductItemList } from "../../model/products/product-item-list";
+import React from "react";
 import { Constants } from "../../modules/constants/constants";
-import { ProductManager } from "../../modules/product-manager/product-manager";
 import './style.css';
 
 const Menu: React.FC = () => {

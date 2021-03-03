@@ -16,9 +16,9 @@ const ProductPage: React.FC = () => {
     useEffect(() => {
       if(!isLoading && !productLoaded) {
         setIsLoading(true);
-        ProductManager.getProductList().then((result) => {
+        ProductManager.productList.then((result) => {
           setProductLoaded(true);
-          window.setTimeout(() => setIsLoading(false),1000);
+          window.setTimeout(() => setIsLoading(false), 1000);
 
           if(result.items != null && JSON.stringify(result.items) !== JSON.stringify(productList)) {
             setProductList(result);
