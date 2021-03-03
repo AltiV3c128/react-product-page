@@ -37,7 +37,7 @@ const ProductPage: React.FC = () => {
                 <div className='logo-bar'>
                     <img src={Constants.url.logoImage} alt='Logo' />
                 </div>
-                <Menu />
+                <Menu activeItem={0}/>
                 <SearchBar 
                     searchText={searchText} 
                     onChange={(event:React.ChangeEvent<HTMLInputElement>) => updateSearchText(event)}
