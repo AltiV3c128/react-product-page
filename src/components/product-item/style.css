@@ -1,14 +1,7 @@
-.product-view .related {
+.product-view {
     display: flex;
-    height: 50px;
-    overflow-x: auto;
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.product-view .related img {
-    margin-right: 10px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .product-view .info {
@@ -16,13 +9,7 @@
     flex-direction: column;
     align-items: center;
     text-transform: capitalize;
-}
-
-.product-view .related::-webkit-scrollbar {
-    width: 16px;
-    height: 20px;
-
-    background: transparent;
-    color: transparent;
-    border: transparent;
+    font-size: .9em;
+    line-height: 1.6em;
+    padding: 5px 0;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Price } from "../../model/price/price";
 import { ProductItem } from "../../model/products/product-item";
 import { Constants } from "../../modules/constants/constants";
+import RelatedContainer from "../related-container/related-container";
 import './style.css';
 
 interface ProductProps {
@@ -22,13 +23,7 @@ const ProductView: React.FC<ProductProps> = ({key, item}) => {
         <div>{ getFormattedPrice(new Price(item.price.current, item.price.currency)) }</div>
         <div>{item.name.toLowerCase()}</div>
       </div>
-      <div className='related'>
-        {item.variants && !!item.variants.length && item.variants.map((variant: ProductItem) => (
-          <div className='variant'>
-            <img src={Constants.url.productImageVariant} />
-          </div>
-        ))}
-      </div>
+      <RelatedContainer item={item} />
     </div>
   );
 }

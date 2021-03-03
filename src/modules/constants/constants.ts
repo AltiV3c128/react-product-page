@@ -18,5 +18,7 @@ export class Constants {
         lenses : 'Lenses',
 
         resetButton : 'RESET',
+        relatedLeftButton: '<',
+        relatedRightButton: '>',
     }
 }
