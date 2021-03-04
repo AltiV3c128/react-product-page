@@ -22,7 +22,7 @@ export class Constants {
 
         resetButton : 'Reset',
         subscribeButton : 'Sign Up',
-        emailError: 'Indirizzo email non valido',
+        emailError: 'Incorrect e-mail address',
         relatedLeftButton: '<',
         relatedRightButton: '>',
         productListEmptyState : 'Sorry, we didn\'t find what you were looking for :\'(',
