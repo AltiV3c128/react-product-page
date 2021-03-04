@@ -1,13 +1,10 @@
 import React from "react";
 import { ProductItem } from "../../model/products/product-item";
-import { Constants } from "../../modules/constants/constants";
+import { Constants } from "../../shared/constants/constants";
 import './style.css';
-
 interface RelatedContainerProps {
   item: ProductItem 
 }
-
-
 class RelatedContainer extends React.Component<RelatedContainerProps> {
     contentRef: React.RefObject<HTMLDivElement>;
     containerRef: React.RefObject<HTMLDivElement>;
@@ -22,6 +19,10 @@ class RelatedContainer extends React.Component<RelatedContainerProps> {
         this.checkRelatedResizing();
         this.enableButtonsAction();
         window.addEventListener('resize', this.checkRelatedResizing);
+    }
+
+    componentDidUpdate () {
+        this.checkRelatedResizing();
     }
     
     checkRelatedResizing = () => {
@@ -81,7 +82,7 @@ class RelatedContainer extends React.Component<RelatedContainerProps> {
                     <div className='variant-container' ref={this.contentRef}>
                         {this.props.item.variants && !!this.props.item.variants.length && this.props.item.variants.map((variant: ProductItem) => (
                             <div className='variant'>
-                                <text className='availability'>{variant.availability.stock}</text>
+                                <span className='availability'>{variant.availability.stock}</span>
                                 <img src={Constants.url.productImageVariant} alt={`variant ${variant.availability.stock}`} />
                             </div>
                         ))}

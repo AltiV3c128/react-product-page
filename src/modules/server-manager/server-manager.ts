@@ -1,9 +1,8 @@
 import axios from "axios";
 import { ProductItemList } from "../../model/products/product-item-list";
-import { Constants } from "../constants/constants";
+import { Constants } from "../../shared/constants/constants";
 import { GetProductListResponse } from "../product-manager/dto/get-products-list-response";
 import { ServerResponse } from "./server-response";
-
 export class ServerManager {
 
     public static getProductList() : Promise<ProductItemList> {

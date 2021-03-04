@@ -1,7 +1,6 @@
 import React from "react";
-import { Constants } from "../../modules/constants/constants";
+import { Constants } from "../../shared/constants/constants";
 import './style.css';
-
 interface MenuProps {
     activeItem?: number
 }

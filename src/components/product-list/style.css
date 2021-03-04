@@ -8,6 +8,7 @@
 @keyframes loading-logo-spin {
     from { transform: rotate(0deg); } to { transform: rotate(360deg); }
 }
+
 .loading {
     display: flex;
     justify-content: center;
@@ -15,9 +16,15 @@
     height: calc(100vh - 80px);
 }
 
+.empty-state {
+    display: flex;
+    flex-grow: 1;
+}
+
 .product-list-view {
     display: grid;
-    grid-template-columns: calc(100%);
+    max-width: 100%;
+    grid-template-columns: 100%;
     margin: 0 5px;
 }
 

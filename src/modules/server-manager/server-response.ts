@@ -20,7 +20,7 @@ export class ServerResponse<T extends BasePayload>{
     }
 
     public isOK() : boolean {
-        return this.status == ServerResponseCode.OK;
+        return this.status === ServerResponseCode.OK;
     }
 
 }

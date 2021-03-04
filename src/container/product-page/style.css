@@ -1,0 +1,25 @@
+.product-page {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.empty-state {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-state span {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    line-height: 1.2em;
+    padding: 20%;
+    font-style: italic;
+}

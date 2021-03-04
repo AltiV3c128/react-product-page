@@ -1,3 +1,11 @@
+html, body, #root {
+  height: 100vh;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', 'Segoe UI', 'Oxygen',
@@ -5,34 +13,22 @@ body {
     sans-serif;
 }
 
-.header {
-  display: flex;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding: 0 10px;
-  justify-content: space-between;
-  border-bottom: solid 1px #BABABA;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.logo-bar,
-.search-bar {
-  align-items: center;
-  height: 50px;
-}
-
-.search-bar input {
-  height: 20px;
-}
-
 .product-page {
-  min-width: 320px
+  min-width: 300px;
+  min-height: 100vh;
 }
 
-.menu-bar,
-.search-bar {
-  display: none;
+.container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.mobile-port .menu-bar,
+.mobile-port .search-bar,
+.mobile-land .menu-bar,
+.mobile-land .search-bar {
+    display: none;
 }
 
 .tablet-port .menu-bar,
