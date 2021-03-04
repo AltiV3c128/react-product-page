@@ -1,0 +1,20 @@
+.product-page {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.empty-state {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-state span {
+    font-size: 2em;
+    line-height: 1.2em;
+    font-style: italic;
+    display: block;
+    max-width: 270px;
+}

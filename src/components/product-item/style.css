@@ -4,30 +4,12 @@
     align-items: center;
 }
 
-.product-view .related {
-    display: flex;
-    justify-content: space-between;
-    overflow-x: auto;
-    width: 200px;
-}
-
-.product-view .related .variant-container {
-    display: flex;
-    height: 50px;
-}
-
-.product-view .related img {
-    margin: 0 5px;
-}
-
 .product-view .info {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-transform: capitalize;
-}
-
-.product-view .related::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+    font-size: .9em;
+    line-height: 1.6em;
+    padding: 5px 0;
 }

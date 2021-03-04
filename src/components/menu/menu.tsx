@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from "react";
-import ProductListView from "../../components/product-list/product-list";
-import { ProductItemList } from "../../model/products/product-item-list";
-import { Constants } from "../../modules/constants/constants";
-import { ProductManager } from "../../modules/product-manager/product-manager";
+import React from "react";
+import { Constants } from "../../shared/constants/constants";
 import './style.css';
-
 interface MenuProps {
     activeItem?: number
 }

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import logo from '../../assets/logo.svg';
 import ProductView from "../product-item/product-item";
 import { ProductItem } from "../../model/products/product-item";
 import { ProductItemList } from "../../model/products/product-item-list";
+import { Constants } from "../../shared/constants/constants";
 import './style.css';
 interface ProductListProps {
   list: ProductItemList,
@@ -23,15 +24,17 @@ class ProductListView extends React.Component<ProductListProps, ProductListState
   }
 
   componentDidUpdate(oldProps: ProductListProps) {
-    if (oldProps.filterSearchText != this.props.filterSearchText && this.props.list.items) {
+    if (oldProps.filterSearchText !== this.props.filterSearchText && this.props.list.items) {
       const textSearch = this.props.filterSearchText || '';
       const filtered = this.props.list.items.filter((item: { name: string; }) => { 
         return item.name.toLowerCase().search(textSearch.toLowerCase()) >= 0;
       });
-      this.setState({itemsToShow : new ProductItemList(filtered)});
+      this.setState({
+        itemsToShow : new ProductItemList(filtered)
+      });
     } 
 
-    if(oldProps.list != this.props.list) {
+    if(oldProps.list !== this.props.list) {
       this.setState({itemsToShow : this.props.list});
     }
   }
@@ -39,7 +42,7 @@ class ProductListView extends React.Component<ProductListProps, ProductListState
   render() {
     return (
       <>
-        { (this.props.isLoading) && ( 
+        {this.props.isLoading && ( 
           <div className='loading'>
             <img src={logo} className="loading-logo" alt="logo" />
           </div>
@@ -48,8 +51,14 @@ class ProductListView extends React.Component<ProductListProps, ProductListState
         {!this.props.isLoading && this.state.itemsToShow && (
           <div className={`product-list-view ${!!this.state.itemsToShow.items?.length ? 'visible' : ''}`}>
             {this.state.itemsToShow.items?.map((item: ProductItem, index: number) => (
-              <ProductView key={index} item={item} />
+              <ProductView item={item} />
             ))}
+          </div>
+        )}
+
+        {!this.props.isLoading && !this.state.itemsToShow.items?.length && (
+          <div className='empty-state'>
+            <span>{Constants.labels.productListEmptyState}</span>
           </div>
         )}
       </>

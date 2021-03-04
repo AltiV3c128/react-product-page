@@ -9,7 +9,9 @@ const MediaQueryBodyClass: React.FC = () => {
         desktopSD: "(min-width: 1270px) and (max-width: 1599px)",
         desktopHD: "(min-width: 1600px)",
     };
+    
     const matches = useMedia({ queries: GlobalMediaQueries });
+
     document.body.className = 
         matches.desktopHD ? 'desktop-hd' : 
         matches.desktopSD ? 'desktop-sd' :

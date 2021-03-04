@@ -1,11 +1,12 @@
 import React from "react";
+import { useMedia } from "react-media";
 import { Price } from "../../model/price/price";
 import { ProductItem } from "../../model/products/product-item";
-import { Constants } from "../../modules/constants/constants";
+import { Constants } from "../../shared/constants/constants";
+import RelatedContainer from "../related-container/related-container";
+import MediaProductImage from "./productImage";
 import './style.css';
-
 interface ProductProps {
-  key : number,
   item: ProductItem 
 }
 
@@ -14,23 +15,18 @@ const getFormattedPrice = (price: Price) => {
     return (symbol!+' '+price.current.value); 
 }
 
-const ProductView: React.FC<ProductProps> = ({key, item}) => {
+const ProductView: React.FC<ProductProps> = ({item}) => {
+  const mediaquery = { verySmallViewport: "(max-width: 320px)" };
+  const matches = useMedia({ queries: mediaquery });
+  
   return (
-    <div key={key} className="product-view">
-      <img className='product' src={Constants.url.productImage} alt='Product' />
+    <div id={item.UPC.toString()} className="product-view">
+      <img className='product' alt='Product' src={matches.verySmallViewport ? Constants.url.smallProductImage : Constants.url.productImage } />
       <div className='info'>
         <div>{ getFormattedPrice(new Price(item.price.current, item.price.currency)) }</div>
         <div>{item.name.toLowerCase()}</div>
       </div>
-      <div className='related'>
-        <div className='variant-container'>
-          {item.variants && !!item.variants.length && item.variants.map((variant: ProductItem) => (
-            <div className='variant'>
-              <img src={Constants.url.productImageVariant} />
-            </div>
-          ))}
-        </div>
-      </div>
+      <RelatedContainer item={item} />
     </div>
   );
 }

@@ -1,10 +1,7 @@
-import { isConstructorDeclaration } from "typescript";
-import { Constants } from "../../modules/constants/constants";
-
+import { Constants } from "../../shared/constants/constants";
 interface Current { 
     value: number; 
 }
-
 export class Price {
     public current: Current;
     public currency: string;
@@ -15,7 +12,7 @@ export class Price {
     }
 
     public getCurrencySymbol() {
-        const currencies = Constants.currencies.filter((item) => item.iso == this.currency );
+        const currencies = Constants.currencies.filter((item) => item.iso === this.currency );
         return !!currencies.length ? currencies[0].symbol : this.currency;
     }
 }
