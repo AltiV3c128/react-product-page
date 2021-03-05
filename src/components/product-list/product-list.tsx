@@ -48,7 +48,7 @@ class ProductListView extends React.Component<ProductListProps, ProductListState
           </div>
         )}
 
-        {!this.props.isLoading && this.state.itemsToShow && (
+        {!this.props.isLoading && !!this.state.itemsToShow.items?.length && (
           <div className={`product-list-view ${!!this.state.itemsToShow.items?.length ? 'visible' : ''}`}>
             {this.state.itemsToShow.items?.map((item: ProductItem, index: number) => (
               <ProductView item={item} />
