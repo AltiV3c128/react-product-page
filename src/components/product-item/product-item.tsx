@@ -4,7 +4,6 @@ import { Price } from "../../model/price/price";
 import { ProductItem } from "../../model/products/product-item";
 import { Constants } from "../../shared/constants/constants";
 import RelatedContainer from "../related-container/related-container";
-import MediaProductImage from "./productImage";
 import './style.css';
 interface ProductProps {
   item: ProductItem 
