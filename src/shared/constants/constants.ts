@@ -19,6 +19,7 @@ export class Constants {
         sunglasses : 'Sunglasses',
         eyeglasses : 'Eyeglasses',
         lenses : 'Lenses',
+        files : 'Files',
 
         resetButton : 'Reset',
         subscribeButton : 'Sign Up',

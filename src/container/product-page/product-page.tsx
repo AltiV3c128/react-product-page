@@ -32,19 +32,20 @@ const ProductPage: React.FC = () => {
 
     return (
         <div className="product-page">
-            <Header 
-                searchText={searchText} 
-				setSearchText={(s : string) => setSearchText(s)}
-                updateSearchText={(event:React.ChangeEvent<HTMLInputElement>) => updateSearchText(event)}
+          <Header 
+              menuIndex={0}
+              searchText={searchText} 
+              setSearchText={(s : string) => setSearchText(s)}
+              updateSearchText={(event:React.ChangeEvent<HTMLInputElement>) => updateSearchText(event)}
+          />
+          <div className='container'>
+            <ProductListView 
+              isLoading={isLoading} 
+              list={productList} 
+              filterSearchText={searchText}
             />
-			<div className='container'>
-				<ProductListView 
-					isLoading={isLoading} 
-					list={productList} 
-					filterSearchText={searchText}
-				/>
-			</div>
-            <Footer />
+          </div>
+          <Footer />
         </div>
     );
 }

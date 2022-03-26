@@ -5,18 +5,19 @@ import SearchBar from "../search-bar/search-bar";
 import './style.css';
 
 interface HeaderProps {
-    searchText : string, 
+    menuIndex : number,
+    searchText : string,
 	setSearchText : (text : string) => void,
     updateSearchText : (event:React.ChangeEvent<HTMLInputElement>) => void,
 }
 
-const Header: React.FC <HeaderProps>= ({searchText, updateSearchText, setSearchText}) => {
+const Header: React.FC <HeaderProps>= ({menuIndex, searchText, updateSearchText, setSearchText}) => {
     return (
         <header className="header">
             <div className='logo-bar'>
                 <img src={Constants.url.logoImage} alt='Logo' />
             </div>
-            <Menu activeItem={0}/>
+            <Menu activeItem={menuIndex}/>
             <SearchBar 
                 searchText={searchText} 
                 onChange={(event:React.ChangeEvent<HTMLInputElement>) => updateSearchText(event)}
